@@ -1,103 +1,72 @@
-import Image from "next/image";
+'use client'
+
+import Image from 'next/image'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main className="flex items-center justify-center bg-zinc-100 text-slate-800 dark:bg-zinc-900 dark:text-slate-300">
+      <div className="container max-w-8xl lg:h-screen">
+        <div className="flex flex-col lg:flex-row-reverse lg:h-screen items-center justify-center">
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          {/* TOP / RIGHT */}
+          <div className="basis-1/2 flex flex-col items-center justify-center mt-20 lg:mt-0">
+            <h1>Ian Strouse</h1>
+            <h2 className="mt-5">Full Stack Engineer</h2>
+
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              className="mt-10 shadow-md shadow-black/30 dark:shadow-black"
+              src="/profilePic2019.jpg"
+              alt="Profile Pic"
+              width={400}
+              height={400}
+              priority
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+
+            <h4 className="mt-10">CONNECT WITH ME</h4>
+
+            <div className="flex flex-row">
+              <a className="m-2" href="https://www.linkedin.com/in/ian-strouse/" target="_blank">
+                <FontAwesomeIcon className="text-2xl transition-colors ease-in-out hover:text-slate-400 hover:dark:text-slate-500" icon={faLinkedinIn} />
+              </a>
+              <a className="m-2" href="https://github.com/icstrouse" target="_blank">
+                <FontAwesomeIcon className="text-2xl transition-colors ease-in-out hover:text-slate-400 hover:dark:text-slate-500" icon={faGithub} />
+              </a>
+              <a className="m-2" href="https://leetcode.com/u/icstrouse/" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                  className="h-6 w-6 text-2xl transition-colors ease-in-out hover:text-slate-400 hover:dark:text-slate-500"
+                  fill="currentColor"
+                  strokeWidth="0.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    d="M21.469 23.907l-3.595 3.473c-0.624 0.625-1.484 0.885-2.432 0.885s-1.807-0.26-2.432-0.885l-5.776-5.812c-0.62-0.625-0.937-1.537-0.937-2.485 0-0.952 0.317-1.812 0.937-2.432l5.76-5.844c0.62-0.619 1.5-0.859 2.448-0.859s1.808 0.26 2.432 0.885l3.595 3.473c0.687 0.688 1.823 0.663 2.536-0.052 0.708-0.713 0.735-1.848 0.047-2.536l-3.473-3.511c-0.901-0.891-2.032-1.505-3.261-1.787l3.287-3.333c0.688-0.687 0.667-1.823-0.047-2.536s-1.849-0.735-2.536-0.052l-13.469 13.469c-1.307 1.312-1.989 3.113-1.989 5.113 0 1.996 0.683 3.86 1.989 5.168l5.797 5.812c1.307 1.307 3.115 1.937 5.115 1.937 1.995 0 3.801-0.683 5.109-1.989l3.479-3.521c0.688-0.683 0.661-1.817-0.052-2.531s-1.849-0.74-2.531-0.052zM27.749 17.349h-13.531c-0.932 0-1.692 0.801-1.692 1.791 0 0.991 0.76 1.797 1.692 1.797h13.531c0.933 0 1.693-0.807 1.693-1.797 0-0.989-0.76-1.791-1.693-1.791z"
+                    transform="scale(0.7)"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          {/* BOTTOM / LEFT SIDE */}
+          <div className="basis-1/2 py-20 px-10 lg:p-20 items-center">
+            <div className="flex justify-center">
+              <h3>ABOUT ME</h3>
+            </div>
+
+            <p className="mt-10 text-lg text-justify">I’m a software engineer with 9 years of experience, primarily in backend engineering. Coming from a liberal arts background, I began my journey with a focus on people, but quickly developed my technical chops, learning IT and software development. I am now an experienced engineer specializing in the design and development of APIs, SQL databases, and systems architecture. My passion has always been bridging the divide between people and tech.</p>
+            
+            <div className="flex justify-center mt-16 ">
+              <a
+                className="flex justify-center pt-1 h-10 w-28 text-lg font-bold rounded-sm shadow-md shadow-black/30 dark:shadow-black bg-slate-800 text-zinc-100 dark:bg-slate-200 dark:text-zinc-900 transition-colors ease-in-out hover:bg-slate-400 hover:dark:bg-slate-500"
+                href="/Ian Strouse Resume.pdf"
+                target="_blank"
+              >Resume</a>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+      </div>
+    </main>
+  )
 }

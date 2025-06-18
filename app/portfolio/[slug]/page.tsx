@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 import { fetchPortfolioProject } from '@/app/lib/data';
 
-export default async function ProjectPage({ params }: { params: { slug: string } }) {
+export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   
   if (!slug) {
